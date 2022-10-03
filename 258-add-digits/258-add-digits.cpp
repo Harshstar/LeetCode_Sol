@@ -9,12 +9,12 @@ public:
             {
                 int d;
                 d=temp%10;
-                sum=sum+d;
+                sum =sum+d;
                 temp=temp/10;
             }
             num=sum;
         }
         return num;
-        
+
     }
 };
