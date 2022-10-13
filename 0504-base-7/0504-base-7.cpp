@@ -5,7 +5,7 @@ public:
         int j = 1;
         while(num)
         { 
-            ans += (num%7)*j;
+            ans + = (num%7)*j;
             num /=7;
             j*=10;
         }
