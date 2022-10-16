@@ -10,7 +10,7 @@ public:
         int carry=0,digit;
         for(i=0;i<num1.size();i++)
         {
-            digit=((num1[i]-'0')+(num2[i]-'0') + carry)%10;
+            digit=((num1[i]-'0')+(num2[i]-'0') + carry) % 10;
             carry=(num1[i]-'0'+num2[i]-'0'+carry)/10;
             sum+=to_string(digit);
         }
