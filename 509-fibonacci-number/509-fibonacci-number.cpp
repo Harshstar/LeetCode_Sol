@@ -4,7 +4,7 @@ public:
         if(n < 2){
             return n;
         }
-        vector vals = {0, 1};
+        vector vals={0, 1};
         
         int i = 2;
         int sum = 1;
