@@ -17,7 +17,7 @@ public:
         while(i<j)
         {
             int mid;
-            mid=i+ (j-i)/2;
+            mid=i+(j-i)/2;
             if(guess(mid)==1)
             {
                 i=mid+1;
