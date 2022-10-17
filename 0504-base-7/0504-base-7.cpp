@@ -8,6 +8,7 @@ public:
             ans + = (num%7)*j;
             num /=7;
             j*=10;
+            
         }
         return to_string(ans);
     }
