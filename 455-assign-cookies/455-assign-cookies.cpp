@@ -4,7 +4,7 @@ public:
         int i=0,j=0,c=0;
         sort(g.begin(),g.end());
         sort(s.begin(),s.end());
-        while(i<g.size() && j<s.size())
+        while(i<g.size()&&j<s.size())
         {
             if(g[i]<=s[j])
             {
