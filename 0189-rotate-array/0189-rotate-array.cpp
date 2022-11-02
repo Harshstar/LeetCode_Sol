@@ -2,7 +2,7 @@ class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
         vector <int> temp;
-        k=k%nums.size();
+        k%=nums.size();
         int n=nums.size()-k;
         for(int i=n;i<nums.size();i++)
             temp.push_back(nums[i]);
