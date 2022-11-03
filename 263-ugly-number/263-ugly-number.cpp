@@ -5,7 +5,7 @@ public:
             return false;
         while(num != 1)
         {
-            if(num%5 == 0) 
+            if(num%5 ==0) 
                 num/=5;
             else if(num%3 == 0) 
                 num/=3;
