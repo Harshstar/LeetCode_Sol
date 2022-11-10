@@ -7,7 +7,7 @@ public:
             if(address[i]=='.')
                 result+="[.]";
             else
-                result+=address[i];
+                result+= address[i];
         }
         return result;
     }
