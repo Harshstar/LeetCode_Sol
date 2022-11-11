@@ -9,7 +9,7 @@ public:
                 flag=0;
                 break;
             }
-            else if(nums[i]>target)
+            else if( nums[i]>target)
             { 
                 flag=1; 
                 break;
