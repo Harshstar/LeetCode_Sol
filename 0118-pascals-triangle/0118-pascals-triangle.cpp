@@ -5,7 +5,7 @@ public:
         for(int i=0;i<numRows;i++)
         {
             arr[i].resize(i+1);
-            for(int j=0;j<=i; j++)
+            for(int j=0;j<=i;j++)
             {
                 if(j==0 or j==i)
                      arr[i][j]=1;
