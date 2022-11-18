@@ -2,7 +2,7 @@ class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
         int flag=0,i;
-        for(i=0;i<nums.size();i++)
+        for( i=0;i<nums.size();i++)
         {
             if(nums[i]==target)
             {
