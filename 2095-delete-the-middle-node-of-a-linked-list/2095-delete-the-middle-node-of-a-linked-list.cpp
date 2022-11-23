@@ -21,7 +21,7 @@ public:
             prev = xtr;
             xtr=xtr->next;
             ptr = ptr->next->next;
-           // head = head->next->next;
+           //head = head->next->next;
         }
         prev->next = prev->next->next;
         return head;
