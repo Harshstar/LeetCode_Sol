@@ -7,7 +7,7 @@ public:
         for (int i=0;i<=m;i++) {
             for (int j=1;j<=n;j++ ) 
             {
-                if (p[j-1] == '*') 
+                if (p[j-1]  == '*') 
                 {
                     dp[i][j] = dp[i][j - 2] || (i && dp[i - 1][j] && (s[i - 1] == p[j - 2] || p[j - 2] == '.'));
                 } 
