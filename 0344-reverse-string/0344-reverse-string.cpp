@@ -9,6 +9,6 @@ public:
             l++;
             r--;
         }*/
-        reverse(s.begin() , s.end());
+        reverse(s.begin() ,s.end());
     }
 };
