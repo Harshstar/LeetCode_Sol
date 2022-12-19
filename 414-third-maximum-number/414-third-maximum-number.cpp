@@ -2,7 +2,7 @@ class Solution {
 public:
     int thirdMax(vector<int>& nums) {
         sort(nums.begin(),nums.end(),greater());
-        long mini = LONG_MAX;
+        long mini=LONG_MAX;
     if(nums.size()<3)
         return nums[0];
     
@@ -11,10 +11,10 @@ public:
     {
         if(mini>nums[i])
         {
-            mini = nums[i];
+            mini=nums[i];
             count++;
         }
-        if(count == 3)
+        if(count==3)
             break;
     }
     if(count<3)
