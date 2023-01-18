@@ -7,11 +7,11 @@ public:
             cr += nums[i];
             if (cr>=0) cr = 0;
             mn = min(mn, cr);
-            // kadane's algo
+
             crK += nums[i];
             mxK = max(mxK, crK);
             if (crK<0) crK=0;
-            //sum & max
+
             sm+=nums[i];
             mx=max(mx, nums[i]);
         }
