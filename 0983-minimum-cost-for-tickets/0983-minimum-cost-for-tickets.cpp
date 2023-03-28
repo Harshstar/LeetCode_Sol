@@ -1,18 +1,21 @@
 class Solution {
 public:
     int mincostTickets(vector<int>& days, vector<int>& costs) {
-        int dp[366] = {0};
-        unordered_set<int> travelDays;
-        for (int day : days) {
-            travelDays.insert(day);
+        int n=days.size();
+        vector<int>dp(n+1,INT_MAX);
+        dp[0]=0;
+        for (int i=1;i<=n;i++) 
+        {
+            dp[i]=dp[i-1]+costs[0];
+            int j=i-1;
+            while(j>=0 && days[i-1]-days[j]<7)
+                j--;
+            dp[i]=min(dp[i],dp[j+1]+costs[1]);
+            j=i-1;
+            while(j>=0 && days[i-1]-days[j]<30)
+                j--;
+            dp[i]=min(dp[i],dp[j+1]+costs[2]);
         }
-        for (int i = 1; i <= 365; i++) {
-            if (travelDays.find(i) == travelDays.end()) {
-                dp[i] = dp[i-1];
-            } else {
-                dp[i] = min(dp[i-1] + costs[0], min(dp[max(0, i-7)] + costs[1], dp[max(0, i-30)] + costs[2]));
-            }
-        }
-        return dp[365];
+        return dp[n];
     }
 };
