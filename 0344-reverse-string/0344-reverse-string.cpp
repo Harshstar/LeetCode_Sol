@@ -1,14 +1,13 @@
 class Solution {
 public:
     void reverseString(vector<char>& s) {
-        /*int l=0;
-        int r=s.size()-1;
-        while( l<=r)
+        int i=0,j;
+        j=s.size()-1;
+        while(i<j)
         {
-            swap(s[l],s[r]);
-            l++;
-            r--;
-        }*/
-        reverse(s.begin() ,s.end());
+            swap(s[i],s[j]);
+            i++;
+            j--;
+        }
     }
 };
