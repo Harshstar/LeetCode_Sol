@@ -3,7 +3,7 @@ public:
     TreeNode* buildTree(vector<int>& ino, vector<int>& post) {
     int i1 = post.size()-1;
         return solve(i1,ino,post,0,ino.size()-1);
-    }
+    } 
     TreeNode* solve(int &i,vector<int> &in,vector<int> &post,int l,int r){
         if(l>r)return NULL;
         int x = r;
