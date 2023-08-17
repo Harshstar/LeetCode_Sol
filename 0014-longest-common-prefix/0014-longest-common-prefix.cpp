@@ -7,7 +7,7 @@ public:
         for(int i=0;i<n;i++)
         {
             int len=strs[i].size();
-            if(len<min)
+            if(len<min) 
             {
                 min=len;
                 str=strs[i];
