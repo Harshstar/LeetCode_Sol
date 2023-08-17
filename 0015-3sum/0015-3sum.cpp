@@ -20,8 +20,7 @@ public:
                 {
                     answer.push_back({nums[i],nums[low],nums[high]});
                     
-                    //To avoid duplicate triplets
-                    
+                    //To avoid duplicate triplet
                     int last_low=nums[low],last_high=nums[high];
                     while(low<high && nums[low]==last_low)
                         low++;
