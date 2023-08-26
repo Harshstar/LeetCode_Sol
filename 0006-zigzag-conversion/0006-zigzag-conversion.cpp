@@ -4,7 +4,7 @@ public:
         vector<string>v(numRows,"");
         int i=0;
         int n=s.length();
-        while(i<n)
+        while(i<n) 
         {
             for(int j=0;j<numRows && i<n;j++)
                 v[j].push_back(s[i++]);
