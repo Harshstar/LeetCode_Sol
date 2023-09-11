@@ -15,8 +15,9 @@ public:
             return head;
         int c=1;
         ListNode* curr=head;
-        while(curr->next!=NULL && ++c)
+        while(curr->next!=NULL)
         {
+            c++;
             curr=curr->next;
         }
         curr->next=head;
