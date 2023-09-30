@@ -9,8 +9,8 @@ public:
             if(nums[i]<=k)
                 s.insert(nums[i]);
             if(s.size()==k)
-                break;
+                return c;
         }
-        return c;
+        return -1;
     }
 };
