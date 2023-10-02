@@ -6,7 +6,7 @@ public:
         {
             if(mp.find(nums[i])!=mp.end())
             {
-                if(abs(mp[nums[i]]-i)<=k)
+                if(abs(i-mp[nums[i]]) <=k)
                     return true;
             }
             mp[nums[i]]=i;
