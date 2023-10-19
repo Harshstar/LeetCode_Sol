@@ -11,28 +11,20 @@
  */
 class Solution {
 public:
-    bool match(TreeNode* root1, TreeNode* root2)
+    bool check(TreeNode* p, TreeNode* q)
     {
-        if(root1!=NULL && root2!=NULL)
-        {
-            bool a=match(root1->left , root2->right);
-            bool b=match(root1->right , root2->left);
-                
-            if(root1->val==root2->val && a && b)
-                return true;
-            else
-                return false;
-        }
-        else if(root1==NULL && root2==NULL)
+        if(p==NULL && q==NULL)
             return true;
-        else
+        if(p==NULL || q==NULL)
             return false;
-    }
-    
-    bool isSymmetric(TreeNode* root) {
-        if(root==NULL)
-            return true;
+        if(p->val!=q->val)
+            return false;
         
-        return match(root->left,root->right);
+        bool a=check(p->left,q->right);
+        bool b=check(p->right,q->left);
+        return a&&b;
+    }
+    bool isSymmetric(TreeNode* root) {
+        return check(root->left,root->right);
     }
 };
