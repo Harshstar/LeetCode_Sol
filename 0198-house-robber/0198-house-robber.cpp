@@ -1,16 +1,21 @@
 class Solution {
-    int dp[100]={0};
 public:
-    Solution(){
-        for(int i=0;i<100;i++) 
-            dp[i]=-1;
-    }
-    int rob(vector<int>& nums,int i=0) 
+    int adj(vector<int>&nums,vector<int>&dp ,int ind)
     {
-        if(i>=nums.size()) 
+        if(ind==0)
+            return nums[ind];
+        if(ind<0)
             return 0;
-        if (dp[i]!=-1) 
-            return dp[i];
-        return dp[i]=max(nums[i]+rob(nums,i+2),rob(nums,i+1));
+        if(dp[ind]!=-1)
+            return dp[ind];
+
+        int pick=nums[ind]+adj(nums,dp,ind-2);
+        int notpick= 0 +adj(nums,dp,ind-1);
+        return dp[ind]=max(pick,notpick);
+    }
+    int rob(vector<int>& nums) {
+        int n=nums.size()-1;
+        vector<int>dp(nums.size(),-1);
+        return adj(nums,dp,n);
     }
 };
