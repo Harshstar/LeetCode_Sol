@@ -1,19 +1,16 @@
 class Solution {
 public:
     int deleteAndEarn(vector<int>& nums) {
-    int n = 10001;
-    vector<int> sum(n, 0);
-    vector<int> dp(n, 0);
-    
-    for(auto num: nums){
-        sum[num] += num;
-    }   
-    dp[0] = 0;
-    dp[1] = sum[1];
-    for(int i=2; i<n; i++){
-        dp[i] = max(dp[i-2] + sum[i], dp[i-1]);
+        int maxi=*max_element(nums.begin(),nums.end());
+        vector<int>freq(20006);
+        int dp[20006];
+        for(auto x:nums)
+            freq[x]++;
+        dp[1]=freq[1];
+        dp[2]=max(dp[1],freq[2]*2);
+        for(int i=3;i<=maxi;i++)
+            dp[i]=max(dp[i-1],dp[i-2]+freq[i]*i);
+        
+        return dp[maxi];
     }
-    
-    return dp[n-1];
-}
 };
