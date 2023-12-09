@@ -7,19 +7,17 @@ public:
         int sum=0;
         for(int i=0;i<words.size();i++)
         {
-            string temp=words[i];
-            cout<<temp<<" ";
             bool flag=true;
             unordered_map<char,int>mp2=mp1;
-            for(char i=0;i<temp.size();i++)
+            for(auto x:words[i])
             {
-                if(mp2.find(temp[i])!=mp2.end() && mp2[temp[i]]>0)
-                    mp2[temp[i]]--;
+                if(mp2.find(x)!=mp2.end() && mp2[x]>0)
+                    mp2[x]--;
                 else
                     flag=false;
             }
             if(flag==true)
-                sum+=temp.size();
+                sum+=words[i].size();
         }
         return sum;
     }
