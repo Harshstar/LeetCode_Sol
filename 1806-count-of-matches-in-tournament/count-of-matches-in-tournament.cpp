@@ -4,9 +4,18 @@ public:
         int sum=0;
         while(n>1)
         {
-            int d=n/2;
-            sum+=d;
-            n=n-d;
+            if(n%2!=0)
+            {
+                int temp=n/2;
+                n=n/2+1;
+                sum+=temp;
+            }
+            else
+            {
+                int temp=n/2;
+                n=n/2;
+                sum+=temp;
+            }
         }
         return sum;
     }
