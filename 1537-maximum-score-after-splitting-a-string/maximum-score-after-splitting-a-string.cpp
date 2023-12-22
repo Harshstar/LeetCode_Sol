@@ -1,8 +1,6 @@
 class Solution {
 public:
     int maxScore(string s) {
-        if(s.size()==2 && s[0]==s[1])
-            return 1;
         unordered_map<char,int>mp1;
         for(auto x:s)
             mp1[x]++;
