@@ -10,7 +10,8 @@ public:
         {
             int temp = q.front();    
             q.pop();                 
-            if(vis[temp] == true) continue; 
+            if(vis[temp] == true) 
+                continue; 
             vis[temp] = true;
             for(auto room : rooms[temp])
             {  
