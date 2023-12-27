@@ -1,28 +1,19 @@
 class Solution {
 public:
-    int minCost(string colors, vector<int>& neededTime) {
+    int minCost(string colors, vector<int>& neededTime) 
+    {
+        int time = 0;
         int n = colors.size();
-        vector<int> dp(n, -1);
-        return calculateMinCost(n - 1, colors, neededTime, dp, 'A', neededTime[n - 1]);
-    }
-
-    int calculateMinCost(int i, string& colorSequence, vector<int>& timeRequired, vector<int>& memo, char previousColor, int previousTime) {
-        if (i < 0) {
+        for(int i = 1; i < n; i++)
+        {
+            if(colors[i] == colors[i - 1])
+            {
+                time += min(neededTime[i], neededTime[i - 1]); 
+                neededTime[i] = max(neededTime[i], neededTime[i - 1]); 
+            }     
+        }
         
-            return 0;
-        }
-
-        if (memo[i] != -1) {
-            
-            return memo[i];
-        }
-
-        if (colorSequence[i] == previousColor) {
-            
-            return memo[i] = calculateMinCost(i - 1, colorSequence, timeRequired, memo, colorSequence[i], max(timeRequired[i], previousTime)) + min(timeRequired[i], previousTime);
-        } else {
-            
-            return memo[i] = calculateMinCost(i - 1, colorSequence, timeRequired, memo, colorSequence[i], timeRequired[i]);
-        }
+        return time;
+        
     }
 };
